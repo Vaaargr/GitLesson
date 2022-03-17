@@ -2,6 +2,7 @@ public class Viewer {
     private String nickName;
     private int age;
     private int filmsNumber;
+    private Cinema[] moviesWatched;
 
     public String getNickName() {
         return nickName;
@@ -23,13 +24,14 @@ public class Viewer {
         return filmsNumber;
     }
 
-    public void setFilmsNumber(int filmsNumber) {
-        this.filmsNumber = filmsNumber;
+    public void setFilmsNumber() {
+        if (moviesWatched != null){
+         filmsNumber = moviesWatched.length;
+        }
     }
 
-    public Viewer(String nickName, int age, int filmsNumber) {
+    public Viewer(String nickName, int age) {
         setNickName(nickName);
         setAge(age);
-        setFilmsNumber(filmsNumber);
     }
 }
